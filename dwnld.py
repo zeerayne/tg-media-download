@@ -18,7 +18,7 @@ class MediaTypeChoices(Enum):
     PHOTO = 'photo'
 
 
-async def download_entity_media(client, entity, media_type, output_dir):
+async def download_entity_media(client, entity, media_type, output_dir, overwrite=False):
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
     entity = await client.get_entity(entity)
@@ -33,7 +33,7 @@ async def download_entity_media(client, entity, media_type, output_dir):
         while True:
             try:
                 filename = os.path.join(output_dir, msg.file.name)
-                if os.path.exists(filename):
+                if not overwrite and os.path.exists(filename):
                     break
                 await msg.download_media(file=filename)
             except errors.FloodError as e:
@@ -75,5 +75,6 @@ if __name__ == '__main__':
                 entity=args.entity,
                 media_type=args.type,
                 output_dir=args.output_dir,
+                overwrite=args.overwrite,
             )
         )
