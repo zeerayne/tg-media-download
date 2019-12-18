@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 telethon = "*"
 pysocks = "*"
+cryptg = "*"
+progressbar2 = "*"
 
 [requires]
 python_version = "3.8"
