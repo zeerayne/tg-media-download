@@ -41,9 +41,13 @@ Activate virtualenv
     
     $ pipenv shell
     
-Run script example
-    
-    $ python dnld.py --id=1234567 --hash=c6405a8d35979585cfb39b7ca2dc45fc --phone=+16549871245 \
-    --entity=awesome_channel --type=audio
+Run script
+
+    $ python dwnld.py <params>
     
 After script start you will be promted to input verifivation code
+  
+### Run script example
+    
+    $ python dwnld.py --id=1234567 --hash=c6405a8d35979585cfb39b7ca2dc45fc --phone=+16549871245 \
+    --entity=awesome_channel --type=audio
