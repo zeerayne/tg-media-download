@@ -310,6 +310,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pytest-spec"
+version = "6.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b5/1b/b6375805e7201f1b865e59ce978d16ce067a36a7862e6f266f6f9ac65216/pytest_spec-6.1.0.tar.gz", hash = "sha256:0168ebebd8ef2050d94876698204066d491d1b46c2408b588a898421d533d573", size = 1195289, upload-time = "2026-05-17T20:46:15.911Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/91/79/978f3a60e35d9ef9393912c18ef3d881b62685b6576c5451e816285fb236/pytest_spec-6.1.0-py3-none-any.whl", hash = "sha256:1b29dde53b5a17b311329ff9bb7bb5c7591a4688e52c518f1ea0197bba544c37", size = 15879, upload-time = "2026-05-17T20:46:14.365Z" },
+]
+
+[[package]]
 name = "python-discovery"
 version = "1.5.1"
 source = { registry = "https://pypi.org/simple" }
@@ -459,34 +468,31 @@ dependencies = [
     { name = "telethon" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-asyncio" },
+    { name = "pytest-spec" },
     { name = "ruff" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pre-commit" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "cryptg", specifier = ">=0.4.0" },
-    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=4.0.0" },
     { name = "progressbar2", specifier = ">=4.3.0" },
     { name = "pysocks", specifier = ">=1.7.1" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
-    { name = "pytest-asyncio", marker = "extra == 'dev'", specifier = ">=0.23" },
-    { name = "ruff", marker = "extra == 'dev'" },
     { name = "telethon", specifier = ">=1.36.0" },
 ]
-provides-extras = ["dev"]
 
 [package.metadata.requires-dev]
-dev = [{ name = "pre-commit", specifier = ">=4.6.1" }]
+dev = [
+    { name = "pre-commit", specifier = ">=4.0.0" },
+    { name = "pytest", specifier = ">=8.0" },
+    { name = "pytest-asyncio", specifier = ">=0.23" },
+    { name = "pytest-spec", specifier = ">=6.1.0" },
+    { name = "ruff" },
+]
 
 [[package]]
 name = "tomli"
