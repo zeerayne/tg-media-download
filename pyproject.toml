@@ -24,6 +24,7 @@ dev = [
 package = false
 
 [tool.pytest.ini_options]
+pythonpath = ["."]
 spec_header_format = "Case: {test_case}\nPath: {module_path}"
 spec_test_format = '{result} {docstring_summary}'
 spec_success_indicator = '✓'
