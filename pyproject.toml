@@ -1,0 +1,15 @@
+[project]
+name = "tg-media-download"
+version = "0.1.0"
+description = "Download media of a specified type from a Telegram entity"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "telethon>=1.36.0",
+    "pysocks>=1.7.1",
+    "cryptg>=0.4.0",
+    "progressbar2>=4.3.0",
+]
+
+[tool.uv]
+package = false

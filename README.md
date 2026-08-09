@@ -3,15 +3,23 @@ Downloads media of specified type from telegram entity
 
 ## Installation
 
-First of all, pipenv should be installed
-    
-    $ pip install pipenv
-    
-Next, create virtualenv and install dependencies
+This project uses uv for dependency management and virtual environments.
 
-    $ pipenv install
-    
-Now it's time to obtain telegram API ID and hash. 
+Requirements: Python 3.10+
+
+Install uv if it is not already installed:
+
+    $ curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Then install the project dependencies:
+
+    $ uv sync
+
+If you want to use the environment manually, activate it:
+
+    $ source .venv/bin/activate
+
+Now it's time to obtain Telegram API ID and hash.
 
 1. [Login to your Telegram account](https://my.telegram.org/) with the phone number of the developer account to use.
 1. Click under API Development tools.
@@ -37,15 +45,16 @@ Parameter|Parameter|Required|Value|Description
 -o|--output_dir| |Default: ./downloads|Directory to store downloaded files
 -O|--overwrite| |No value, if option is submitted, files will be overwritten|Specifies whether will be files overwritten or skipped
 
-Activate virtualenv
-    
-    $ pipenv shell
-    
-Run script
+You can run the script either with uv directly or after activating the virtual environment.
 
+    $ uv run python dwnld.py <params>
+
+Or:
+
+    $ source .venv/bin/activate
     $ python dwnld.py <params>
-    
-After script start you will be promted to input verifivation code
+
+After the script starts, you will be prompted to enter the verification code.
   
 ### Run script example
     
